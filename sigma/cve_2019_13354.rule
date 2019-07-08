@@ -1,0 +1,16 @@
+title: Compromised Ruby strong_password Gem Detected
+description: Detects payload downloads from recent strong_password Ruby Gem compromise (CVE-2019-13354)
+author: Adam Bradbury
+references: 
+    - 'https://withatwist.dev/strong-password-rubygem-hijacked.html'
+logsource:
+    category: webserver
+detection:
+    keywords:
+        - '*/raw/xa456PFt'
+    condition: keywords
+fields:
+    - url
+falsepositives:
+    - unknown
+level: critical
